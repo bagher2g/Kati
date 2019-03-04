@@ -17,6 +17,10 @@ class Web extends BaseRoute
         $this->get("salam", function(){
             return "123" ;
         });
+
+        $this->get("test", function(){
+            return "1234" ;
+        });
     }
 
 
