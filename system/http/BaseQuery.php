@@ -11,8 +11,9 @@ class BaseQuery
     protected $is_empty = false ;
 
 
-    public function __construct($uri=[])
+    public function __construct($uri='')
     {
+        $uri = $this->render($uri) ;
         $this->elements = $uri ;
 
         $size_of_elements = sizeof($this->elements) ;
@@ -60,5 +61,22 @@ class BaseQuery
     }
 
 
+    private function render($uri)
+    {
+        if( $uri == '' || $uri == '/' )
+        {
+            $uri = [] ;
+        }
+        else
+        {
+            if($uri[0] == '/')
+            {
+                $uri = substr($uri, 1, strlen($uri)-1 ) ;
+            }
 
+            $uri = explode('/', $uri) ;
+        }
+
+        return $uri ;
+    }
 }

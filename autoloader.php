@@ -1,5 +1,7 @@
 <?php
-
+/*
+    Load all files required
+*/
 require_once('config.php') ;
 require_once('system\http\BaseQuery.php') ;
 require_once('system\http\BaseRequest.php') ;

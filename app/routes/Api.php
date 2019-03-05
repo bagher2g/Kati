@@ -3,7 +3,7 @@ namespace App\App\Routes ;
 
 use App\System\Http\BaseRoute ;
 
-class Api extends BaseRoute
+class Api extends BaseRoute interface 
 {
     protected $prefix = 'api' ;
 
