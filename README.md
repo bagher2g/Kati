@@ -1,2 +1,2 @@
 # Kati
-A php slim framework
+A slim php framework
