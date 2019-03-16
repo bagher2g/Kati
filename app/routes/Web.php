@@ -1,56 +1,25 @@
 <?php
 namespace App\App\Routes ;
-
+/*
+    | This class is using to set routes map in BaseRoutes::routes
+*/
 use App\System\Http\BaseRoute ;
+use App\App\Controllers\TestController ;
 
 class Web extends BaseRoute
 {
-    protected $prefix = '' ;
+    protected $prefix = '' ;  // Feel free to change this prefix. your query will be like http://example.com/api/<....>
 
     public function __construct()
     {
-        $this->get("welcome-world", function(){
-           return "Hello<br/>Kati has a amazing routing servic, supporting GET, POST AND DELETE methods and beautiful routing." ;
-        }) ;
-        $this->get("", function(){ return "salam" ;}) ;
+        $testController = new TestController ;
 
-        $this->get("salam", function(){
-            return "123" ;
-        });
 
-        $this->get("test", function(){
-            return "1234" ;
-        });
+        $this->get("welcome-world", function() use ($testController){ return $testController->welcome_world() ; }) ;
+        $this->get("سلام-دنیا", function() use ($testController){ return $testController->salam_donya() ; }) ;
+
+        $this->set_prefix('user') ;
+        $this->get('add', function() use($testController) { return $testController->add() ; } ) ;
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private function get($index, $function)
-    {
-        BaseRoute::set($index, $function, $this->prefix, 'get') ;
-    }
-
-    private function post($index, $function)
-    {
-        BaseRoute::set($index, $function, $this->prefix, 'post') ;
-    }
-
-    private function delete($index, $function)
-    {
-        BaseRoute::set($index, $function, $this->prefix, 'delete') ;
-    }
 }

@@ -1,6 +1,9 @@
 <?php
 namespace App\System\Http ;
-
+/*
+    | This class will render the request and seperate it to elements
+    | Using this class BaseRequest can figure out what uri query wants
+*/
 class BaseQuery
 {
     protected $elements = [] ;
@@ -30,37 +33,81 @@ class BaseQuery
             $this->last_element = $this->elements[ $size_of_elements-1 ] ;
     }
 
+    /*
+        | Return first element of query
+        | URI: http://example.com/user/admin/manage?id=2
+        | felement() would return 'user'
+    */
     public function felement()
     {
         return $this->first_element ;
     }
+
+    /*
+        | Return second element of query
+        | URI: http://example.com/user/admin/manage?id=2
+        | selement() would return 'admin'
+    */
     public function selement()
     {
         return $this->second_element ;
     }
+
+    /*
+        | Return third element of query
+        | URI: http://example.com/user/admin/manage?id=2
+        | selement() would return 'manage'
+    */
     public function telement()
     {
         return $this->third_element ;
     }
+
+    /*
+        | Return last element of query
+        | URI: http://example.com/user/admin/manage?id=2
+        | selement() would return 'manage'
+    */
     public function lelement()
     {
         return $this->last_element ;
     }
+
+    /*
+        | Return n'th element of query
+        | URI: http://example.com/user/admin/manage?id=2
+        | nelement(2) would return 'admin'
+    */
     public function nelement($i)
     {
         return isset( $this->elements[$i] ) ? $this->elements[$i] : '' ;
     }
+
+    /*
+        | Return elements of query as an array
+        | URI: http://example.com/user/admin/manage?id=2
+        | eelements() would return ['', 'user', 'admin', 'manage']
+    */
     public function elements()
     {
         return $this->elements ;
     }
 
+    /*
+        | Return true if query is empty ( first page )
+        | URI: http://example.com/user/admin/manage?id=2
+        | is_empty() would return false
+        | URI: http://example.com/
+        | is_empty() would return true
+    */
     public function is_empty()
     {
         return $is_empty ;
     }
 
-
+    /*
+        | Return the query as array of elements
+    */
     private function render($uri)
     {
         if( $uri == '' || $uri == '/' )
@@ -79,4 +126,5 @@ class BaseQuery
 
         return $uri ;
     }
+
 }
