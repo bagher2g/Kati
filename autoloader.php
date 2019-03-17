@@ -1,13 +1,6 @@
 <?php
 /*
-    Load all files required
+    Load all helper required
 */
-require_once('system\helpers\view_helper.php') ;
-require_once('config.php') ;
-require_once('system\http\BaseQuery.php') ;
-require_once('system\http\BaseRequest.php') ;
-require_once('system\http\BaseRoute.php') ;
-require_once('app\routes\Web.php') ;
-require_once('app\routes\Api.php') ;
-
-require_once('app\controllers\TestController.php') ;
+define('HELPER_DIR', 'system\helpers') ;
+require_once(HELPER_DIR.'\view_helper.php') ;

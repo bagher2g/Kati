@@ -1,5 +1,8 @@
 <?php
+require_once('config.php') ;
+require_once('vendor/autoload.php') ;
 require_once('autoloader.php') ;
+
 
 use App\System\Http\BaseQuery ;
 use App\System\Http\BaseRequest ;
