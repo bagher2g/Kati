@@ -7,10 +7,10 @@
 
         'db' => [
             'mysql' => [
-                'host' => '' ,
-                'username' => '' ,
+                'host' => 'localhost' ,
+                'username' => 'root' ,
                 'password' => '' ,
-                'database' => '' ,
+                'database' => 'Kati' ,
             ],
         ]
     ] ;

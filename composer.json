@@ -9,7 +9,7 @@
     },
     "require-dev": {
         "phpunit/phpunit": "~6.0",
-        "nextras/orm": "*"
+        "doctrine/orm": "*"
     },
     "autoload": {
         "files": [],

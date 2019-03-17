@@ -1,6 +1,6 @@
 <?php
 namespace App\App\Controllers ;
-
+use App\App\Models\Author ;
 
 class TestController
 {
@@ -14,6 +14,11 @@ class TestController
     public function salam_donya()
     {
         $a = time() ;
+        $author = new Author() ;
+        $author->name = 'bagher' ;
+        $author->web = 'http://example.com' ;
+        $author->save();
+
         return view('app\views\test.php', ['title' => 'سلام دنیا!', 'r' => $a]) ;
     }
 
