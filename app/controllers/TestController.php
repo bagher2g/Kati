@@ -12,6 +12,7 @@ class TestController
       try {
         $product = new Author();
         $product->setName('bagher');
+        $product->setWeb('http://bagher2g.ir') ;
 
         $orm->persist($product);
         $orm->flush();

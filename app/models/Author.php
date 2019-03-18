@@ -1,30 +1,40 @@
 <?php
 namespace App\App\Models ;
-// src/Product.php
-use Doctrine\ORM\Mapping as ORM;
+/**
+ * @Entity @Table(name="authors")
+ **/
 class Author
 {
-    /**
-     * @var int
-     */
+    /** @Id @Column(type="integer") @GeneratedValue **/
     protected $id;
-    /**
-     * @var string
-     */
+    /** @Column(type="string") **/
     protected $name;
+
+    /** @Column(type="string") **/
+    protected $web;
 
     public function getId()
     {
-        return $this->id;
-    }
-
-    public function getName()
-    {
-        return $this->name;
+        return $this->id ;
     }
 
     public function setName($name)
     {
-        $this->name = $name;
+       $this->name = $name ;
+    }
+
+    public function getName()
+    {
+        return $this->name ;
+    }
+
+    public function setWeb($web)
+    {
+       $this->web = $web ;
+    }
+
+    public function getWeb()
+    {
+        return $this->web ;
     }
 }
