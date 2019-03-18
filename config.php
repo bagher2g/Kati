@@ -1,4 +1,4 @@
-<?php
+<?
     define('DATABASE_DRIVER','pdo_mysql') ;
 
     $_config = [
