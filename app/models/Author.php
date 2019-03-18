@@ -1,17 +1,30 @@
 <?php
 namespace App\App\Models ;
-use Nextras\Orm\Entity\Entity;
-/**
- * Comment
- *
- * @property int                    $id        {primary}
- * @property string                 $name
- * @property string|NULL            $email
- * @property string                 $content
- * @property DateTimeImmutable      $createdAt {default now}
- * @property DateTimeImmutable|NULL $deletedAt
- * @property Post                   $post      {m:1 Post::$allComments}
- */
-class Author extends Entity
+// src/Product.php
+use Doctrine\ORM\Mapping as ORM;
+class Author
 {
+    /**
+     * @var int
+     */
+    protected $id;
+    /**
+     * @var string
+     */
+    protected $name;
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 }

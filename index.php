@@ -3,9 +3,11 @@ require_once('config.php') ;
 require_once('vendor/autoload.php') ;
 require_once('autoloader.php') ;
 
-
 use App\System\Http\BaseQuery ;
 use App\System\Http\BaseRequest ;
+//use App\System\Database\Doctorin ;
+require_once("system\database\Doctrine.php") ;
+
 
 /*
     | Parse query and convert it to computer readable string
@@ -19,13 +21,22 @@ $uri = urldecode(
     | Below code will convert it to :
     | URL : /user/login
 */
-$uri = str_replace('/'.$config['home'].$config['router'], '', $uri) ;
+$uri = str_replace('/'.$_config['home'].$_config['router'], '', $uri) ;
 /*
     | Pass the request to final parse the url and convert it to BaseQuery object
     | BaseQuery object can retrive as object and make it more human readable
     | The BaseQuery will pass to the BaseRequest
     | BaseRequest runs the request and shows the result in $request->run()
 */
-$request = new BaseRequest( new BaseQuery($uri)  ) ;
-echo $request->run() ;
+try
+{
+    $request = new BaseRequest( new BaseQuery($uri)  ) ;
+    echo $request->run() ;
+}
+catch (Exception $e)
+{
+    echo "<pre>" ;
+        print_r($e);
+    echo "</pre>";
+}
 $request->set_finish_time() ;

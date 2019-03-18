@@ -1,5 +1,5 @@
 <?php
-    $config = [
+    $_config = [
         'home' => 'Kati',
         'router' => '/index.php',
 

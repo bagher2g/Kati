@@ -12,10 +12,11 @@
         "doctrine/orm": "*"
     },
     "autoload": {
-        "files": [],
+
         "psr-4": {
             "App\\App\\": "app/",
             "App\\System\\": "system/"
-        }
+        },
+        "files": []
     }
 }

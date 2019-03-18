@@ -8,16 +8,32 @@ class TestController
 
     public function welcome_world()
     {
+      global $orm ;
+      try {
+        $product = new Author();
+        $product->setName('bagher');
+
+        $orm->persist($product);
+        $orm->flush();
+      }
+      catch ( Doctrine_Connection_Exception $e )
+      {
+          echo 'Code : ' . $e->getPortableCode();
+          echo 'Message : ' . $e->getPortableMessage();
+      }
+
+echo "Created Product with ID " . $product->getId() . "\n";
+
         return 'salaaaaaaam!' ;
+
+
     }
 
     public function salam_donya()
     {
         $a = time() ;
-        $author = new Author() ;
-        $author->name = 'bagher' ;
-        $author->web = 'http://example.com' ;
-        $author->save();
+
+        $d = new Doctrine ;
 
         return view('app\views\test.php', ['title' => 'سلام دنیا!', 'r' => $a]) ;
     }
