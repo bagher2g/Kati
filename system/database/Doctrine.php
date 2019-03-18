@@ -11,13 +11,6 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/app/model
 //$config = Setup::createXMLMetadataConfiguration(array(__DIR__."/config/xml"), $isDevMode);
 //$config = Setup::createYAMLMetadataConfiguration(array(__DIR__."/config/yaml"), $isDevMode);
 
-// database configuration parameters
-$dbParams = array(
-    'driver'   => 'pdo_mysql',
-    'user'     => 'root',
-    'password' => '',
-    'dbname'   => 'Kati',
-);
 
 // obtaining the entity manager
-$orm = EntityManager::create($dbParams, $config);
+$orm = EntityManager::create($_config['database'][DATABASE_DRIVER], $config);
