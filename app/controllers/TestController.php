@@ -32,11 +32,11 @@ echo "Created Product with ID " . $product->getId() . "\n";
 
     public function salam_donya()
     {
-        $a = time() ;
-
-        $authors = Author::find() ;
-        print_r($authors); 
-        return view('app\views\test.php', ['title' => 'سلام دنیا!', 'r' => $a]) ;
+        global $orm ;
+        $o = $orm->createQuery("SELECT u.name, u.web FROM App\App\Models\Author u");
+        $o = $o->getResult() ;
+        echo "<pre>";
+        return print_r($o, true);
     }
 
     public function add()
