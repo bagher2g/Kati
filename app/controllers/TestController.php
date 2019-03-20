@@ -34,8 +34,8 @@ echo "Created Product with ID " . $product->getId() . "\n";
     {
         $a = time() ;
 
-        $d = new Doctrine ;
-
+        $authors = Author::find() ;
+        print_r($authors); 
         return view('app\views\test.php', ['title' => 'سلام دنیا!', 'r' => $a]) ;
     }
 
