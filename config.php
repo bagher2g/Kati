@@ -6,16 +6,26 @@
      *  All configs you need can be set here
      */
     $_config = [
+        /**
+         *
+         */
         'error_handeling' => [
             'app_mode' => 'local'
         ] ,
 
+        /**
+         *
+         */
+         'routing' => [
+             'home' => 'Kati',
+             'router' => '/index.php',
+         ] ,
 
-        'home' => 'Kati',
-        'router' => '/index.php',
 
 
-
+         /**
+          * 
+          */
         'database' => [
             'pdo_mysql' => [
                 'driver'   => 'pdo_mysql',
