@@ -1,9 +1,6 @@
 <?php
 namespace App\System\Http ;
 use App\System\Http\BaseRoute ;
-use App\App\Routes\Web ;
-use App\App\Routes\Api ;
-
 /*
     | This class is responsible for run whole the app
     | Every single request is handeling throw this class
@@ -28,11 +25,11 @@ class BaseRequest
     */
     public function run()
     {
-        /*
-            Feel free to comment or uncomment whatever route config you want
-        */
-        new Web ;
-      //  new Api ;
+        $routes_class = c('routing.class_map', []) ;
+        foreach($routes_class as $rc)
+        {
+            new $rc ;
+        }
 
 
         $routes = BaseRoute::$routes ;

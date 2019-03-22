@@ -19,6 +19,14 @@
          'routing' => [
              'home' => 'Kati',
              'router' => '/index.php',
+
+             /*
+                 Feel free to comment or uncomment whatever route config you want
+             */
+             'class_map' => [
+                'App\App\Routes\Web' ,
+                //'App\App\Routes\Api' ,
+             ] ,
          ] ,
 
 
