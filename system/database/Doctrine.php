@@ -13,4 +13,4 @@ $config = Setup::createAnnotationMetadataConfiguration(array(__DIR__."/app/model
 
 
 // obtaining the entity manager
-$orm = EntityManager::create($_config['database'][DATABASE_DRIVER], $config);
+$orm = EntityManager::create( c('database.'.DATABASE_DRIVER), $config);
