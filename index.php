@@ -20,7 +20,7 @@ $uri = urldecode(
     * Below code will convert it to :
     * URL : /user/login
 */
-$uri = str_replace('/'.$_config['home'].$_config['router'], '', $uri) ;
+$uri = str_replace('/'.c('home').c('router'), '', $uri) ;
 /*
     * Pass the request to final parse the url and convert it to BaseQuery object
     * BaseQuery object can retrive as object and make it more human readable

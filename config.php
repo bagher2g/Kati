@@ -6,6 +6,11 @@
      *  All configs you need can be set here
      */
     $_config = [
+        'error_handeling' => [
+            'app_mode' => 'local'
+        ] ,
+
+
         'home' => 'Kati',
         'router' => '/index.php',
 
