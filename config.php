@@ -24,7 +24,10 @@
     function c($index, $def='')
     {
         global $_config ;
-        $temp = $_config[$index] ;
+        $in = explode('.', $index) ;
+        $temp = $_config ;
+        foreach($in as $i)
+            $temp = $temp[$i] ;
         if( isset($temp) )
             return $temp ;
         else return $def ;
