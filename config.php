@@ -21,10 +21,10 @@
              'router' => '/index.php',
          ] ,
 
-
+         
 
          /**
-          * 
+          *
           */
         'database' => [
             'pdo_mysql' => [
