@@ -34,8 +34,12 @@ try
 }
 catch (Exception $e)
 {
-    echo "<pre>" ;
-        print_r($e);
-    echo "</pre>";
+    if( c('error_handeling.app_mode') == 'local' )
+    {
+        echo "<pre>" ;
+            print_r($e);
+        echo "</pre>";
+    }
+
 }
 $request->set_finish_time() ;
