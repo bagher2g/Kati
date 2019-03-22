@@ -2,5 +2,7 @@
 /*
     Load all helper required
 */
-define('HELPER_DIR', 'system\helpers') ;
-require_once(HELPER_DIR.'\view_helper.php') ;
+$autoloader_files = c('auto_loader', []) ;
+foreach ($autoloader_files as $af) {
+   require_once $af ;
+}

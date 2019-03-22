@@ -5,7 +5,7 @@ require_once('autoloader.php') ;
 
 use App\System\Http\BaseQuery ;
 use App\System\Http\BaseRequest ;
-require_once("system\database\Doctrine.php") ;
+
 
 
 /*

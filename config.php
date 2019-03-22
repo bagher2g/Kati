@@ -1,6 +1,6 @@
 <?php
     define('DATABASE_DRIVER', 'pdo_mysql') ;
-
+    define('HELPER_DIR', 'system\helpers') ;
 
     /**
      *  All configs you need can be set here
@@ -21,7 +21,7 @@
              'router' => '/index.php',
          ] ,
 
-         
+
 
          /**
           *
@@ -33,7 +33,16 @@
                 'password' => '',
                 'dbname'   => 'Kati',
             ],
-        ]
+        ],
+
+
+        /**
+         *
+         */
+         'auto_loader' => [
+            HELPER_DIR . '\view_helper.php' ,
+            'system\database\Doctrine.php' ,
+         ],
     ] ;
 
     function c($index, $def='')
