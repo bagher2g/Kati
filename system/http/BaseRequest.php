@@ -44,7 +44,12 @@ class BaseRequest
     */
     public function set_finish_time()
     {
-        $this->start_time = time() ;
+        $this->finish_time = time() ;
+    }
+
+    public function get_time()
+    {
+        return $this->finish_time - $this->start_time ;
     }
 
     /*
@@ -55,7 +60,7 @@ class BaseRequest
         $method = 'get' ;
         if( sizeof($_GET) != 0  ){
             if( sizeof($_POST) != 0  ){
-                if( isset($_POST["_delete"])  ){
+                if( isset($_POST['_delete'])  ){
                     $method = 'delete' ;
                 }
                 else{

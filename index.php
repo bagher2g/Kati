@@ -31,15 +31,17 @@ try
 {
     $request = new BaseRequest( new BaseQuery($uri)  ) ;
     echo $request->run() ;
+    $request->set_finish_time() ;
 }
 catch (Exception $e)
 {
     if( c('error_handeling.app_mode') == 'local' )
     {
-        echo "<pre>" ;
+        echo '<pre>' ;
             print_r($e);
-        echo "</pre>";
+        echo '<pre>';
+
     }
 
 }
-$request->set_finish_time() ;
+echo $request->get_time() ;

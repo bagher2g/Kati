@@ -1,6 +1,8 @@
 <?php
     define('DATABASE_DRIVER', 'pdo_mysql') ;
     define('HELPER_DIR', 'system\helpers') ;
+    define('DATABASE_DIR', 'system\database') ;
+    define('ROUTES_DIR', 'App\App\Routes') ;
 
     /**
      *  All configs you need can be set here
@@ -24,8 +26,8 @@
                  Feel free to comment or uncomment whatever route config you want
              */
              'class_map' => [
-                'App\App\Routes\Web' ,
-                //'App\App\Routes\Api' ,
+                ROUTES_DIR . '\Web' ,
+                ROUTES_DIR . '\Api' ,
              ] ,
          ] ,
 
@@ -49,7 +51,7 @@
          */
          'auto_loader' => [
             HELPER_DIR . '\view_helper.php' ,
-            'system\database\Doctrine.php' ,
+            DATABASE_DIR . '\Doctrine.php' ,
          ],
     ] ;
 
