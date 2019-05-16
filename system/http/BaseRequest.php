@@ -25,17 +25,15 @@ class BaseRequest
     */
     public function run()
     {
-        $routes_class = c('routing.class_map', []) ;
+        $routes_class = c('routing.class_map', []) ; // using this trick you can set what class maps shoul load
         foreach($routes_class as $rc)
-        {
             new $rc ;
-        }
-
 
         $routes = BaseRoute::$routes ;
         $elements = implode('/', $this->query->elements()) ;
-
         $routes = $routes[$this->detect_method()] ;
+
+        $function_name = function () { return '404' ; } ;
         foreach ( $routes as $key => $value) {
             if( preg_match('~'.$key.'~', $elements) )
             {
