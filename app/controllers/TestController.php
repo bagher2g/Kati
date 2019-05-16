@@ -1,6 +1,7 @@
 <?php
 namespace App\App\Controllers ;
 use App\App\Models\Author ;
+use App\System\Database\Slimdb ;
 
 class TestController
 {
@@ -41,6 +42,9 @@ echo "Created Product with ID " . $product->getId() . "\n";
 
     public function add()
     {
-        return 'سلام با استفاده از این قسمت میتوانید وارد سایت شوید' ;
+        $slimDb = new Slimdb('project', '../app/slimdb') ;
+        global $orm ;
+        $slimDb->insert('f.txt', $orm) ;
+        return 'test';
     }
 }
