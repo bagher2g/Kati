@@ -55,6 +55,10 @@
          ],
     ] ;
 
+
+    /**
+     * this function is really key function to access config file all over the application
+     */
     function c($index, $def='')
     {
         global $_config ;
