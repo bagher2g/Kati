@@ -34,7 +34,14 @@ class BaseRequest
 
         $routes = BaseRoute::$routes ;
         $elements = implode('/', $this->query->elements()) ;
-        $function_name = $routes[$this->detect_method()][$elements] ;
+
+        $routes = $routes[$this->detect_method()] ;
+        foreach ( $routes as $key => $value) {
+            if( preg_match('~'.$key.'~', $elements) )
+            {
+                $function_name = $routes[$key] ;
+            }
+        }
 
         return $function_name() ;
     }

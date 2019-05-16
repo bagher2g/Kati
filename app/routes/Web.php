@@ -19,7 +19,7 @@ class Web extends BaseRoute
         $this->get("سلام-دنیا", function() use ($testController){ return $testController->salam_donya() ; }) ;
 
         $this->set_prefix('user') ;
-        $this->get('add', function() use($testController) { return $testController->add() ; } ) ;
+        $this->get('add/[[:digit:]]', function() use($testController) { return 'hi' ; } ) ;
     }
 
 }
