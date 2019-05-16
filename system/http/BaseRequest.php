@@ -35,7 +35,7 @@ class BaseRequest
 
         $function_name = function () { return '404' ; } ;
         foreach ( $routes as $key => $value) {
-            if( preg_match('~'.$key.'~', $elements) )
+            if( preg_match('~'.$key.'~', $elements) )  // this will match ther route map to given query
             {
                 $function_name = $routes[$key] ;
             }
