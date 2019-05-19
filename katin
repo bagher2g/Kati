@@ -1,0 +1,42 @@
+<?php
+    /**
+     *  Katin means asistant in Mazandarani
+     * This file would be your help during coding !
+     * just command \php katin help\ in cmd
+     */
+
+     print_r($argv) ;
+
+     if( isset($argv[0]) )
+     {
+          $command = isset($argv[1]) ? $argv[1] : 'null' ;
+
+          switch($command)
+          {
+              case 'help' :
+              {
+                    echo 'this is some help you need!' ;
+              }; break;
+
+              case 'createModel' :
+              {
+                  $name = isset($argv[2]) ? $argv[2] : '' ;
+
+                  $data = file_get_contents('system/kati/createModel.txt') ;
+                  $data = str_replace([
+                      '%CLASSNAME%' ,
+                      '%TABLENAME%' ,
+                  ],
+                  [
+                      strtoupper($name) ,
+                      strtolower($name).'s' ,
+                  ],
+                  $data) ;
+
+                  file_put_contents("app/models/$name.php", $data ) ;
+              }; break;
+          }
+
+     }
+
+?>
