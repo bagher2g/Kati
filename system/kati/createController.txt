@@ -1,0 +1,11 @@
+<?php
+namespace App\App\Controllers ;
+
+class %CLASSNAME%
+{
+
+    public function __construct()
+    {
+
+    }
+}

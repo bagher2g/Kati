@@ -18,6 +18,9 @@
                     echo 'this is some help you need!' ;
               }; break;
 
+              /**
+               * using this command you can create a model in Kati/app/models
+               */
               case 'createModel' :
               {
                   $name = isset($argv[2]) ? $argv[2] : '' ;
@@ -35,6 +38,26 @@
 
                   file_put_contents("app/models/$name.php", $data ) ;
               }; break;
+
+              /**
+               * using this command you can create a controller in Kati/app/controllers
+               */
+              case 'createController' :
+              {
+                  $name = isset($argv[2]) ? $argv[2] : '' ;
+
+                  $data = file_get_contents('system/kati/createController.txt') ;
+                  $data = str_replace([
+                      '%CLASSNAME%' ,
+                  ],
+                  [
+                      $name
+                  ],
+                  $data) ;
+
+                  file_put_contents("app/controllers/".$name."Controller.php", $data ) ;
+              }; break;
+
           }
 
      }
