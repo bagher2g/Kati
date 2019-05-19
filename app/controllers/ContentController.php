@@ -32,9 +32,10 @@ class ContentController
        global $orm ;
        $o = $orm->createQuery('SELECT u.type FROM App\App\Models\Content u') ;
        $o = $o->getResult() ;
+       foreach($o as $i)
+          echo $i['type'] .'<br/>' ;
 
-       print_r($o) ;
     }
 
-    
+
 }

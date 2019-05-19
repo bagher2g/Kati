@@ -44,6 +44,6 @@ catch (Exception $e)
     }
 
 }
-echo $request->get_time() ;
+$request->get_time() ;
 
-$orm = NULL ; // disconnect database 
+$orm = NULL ; // disconnect database
