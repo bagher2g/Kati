@@ -5,6 +5,7 @@ namespace App\App\Routes ;
 */
 use App\System\Http\BaseRoute ;
 use App\App\Controllers\TestController ;
+use App\App\Controllers\ContentController ;
 
 class Web extends BaseRoute
 {
@@ -13,10 +14,15 @@ class Web extends BaseRoute
     public function __construct()
     {
         $testController = new TestController ;
-
+        $contentController = new ContentController ;
 
         $this->get("welcome-world", function() use ($testController){ return $testController->welcome_world() ; }) ;
         $this->get("سلام-دنیا", function() use ($testController){ return $testController->salam_donya() ; }) ;
+
+
+        $this->set_prefix('content') ;
+        $this->get("create", function() use ($contentController){ return $contentController->create() ; }) ;
+        $this->get("get", function() use ($contentController){ return $contentController->get() ; }) ;
 
         $this->set_prefix('user') ;
         $this->get('add/{salam}', function() use ($testController){ return $testController->add() ; }, [

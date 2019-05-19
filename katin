@@ -51,7 +51,7 @@
                       '%CLASSNAME%' ,
                   ],
                   [
-                      $name
+                      $name."Controller" 
                   ],
                   $data) ;
 
