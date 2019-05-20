@@ -16,7 +16,7 @@ class Web extends BaseRoute
         $testController = new TestController ;
         $contentController = new ContentController ;
 
-        $this->get("welcome-world", function() use ($testController){ return $testController->welcome_world() ; }) ;
+      //  $this->get("welcome-world", function() use ($testController){ return $testController->welcome_world() ; }) ;
         $this->get("سلام-دنیا", function() use ($testController){ return $testController->salam_donya() ; }) ;
 
 
