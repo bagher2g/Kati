@@ -13,21 +13,14 @@ class Web extends BaseRoute
 
     public function __construct()
     {
-        $testController = new TestController ;
-        $contentController = new ContentController ;
-
+      //  $testController = new TestController ;
+      //  $this->set_prefix('content') ;
       //  $this->get("welcome-world", function() use ($testController){ return $testController->welcome_world() ; }) ;
-        $this->get("سلام-دنیا", function() use ($testController){ return $testController->salam_donya() ; }) ;
+      /*  $this->get('add/{salam}', function() use ($testController){ return $testController->add() ; }, [
+              '{salam}' => '[[:digit:]]' ,
+          ] ) ; */
 
 
-        $this->set_prefix('content') ;
-        $this->get("create", function() use ($contentController){ return $contentController->create() ; }) ;
-        $this->get("get", function() use ($contentController){ return $contentController->get() ; }) ;
-
-        $this->set_prefix('user') ;
-        $this->get('add/{salam}', function() use ($testController){ return $testController->add() ; }, [
-            '{salam}' => '[[:digit:]]' ,
-        ] ) ;
     }
 
 }
