@@ -1,7 +1,7 @@
 <?php
 namespace App\App\Routes ;
 /*
-    | This class is using to set routes map in BaseRoutes::routes
+    * This class is using to set routes map in BaseRoutes::routes
 */
 use App\System\Http\BaseRoute ;
 use App\App\Controllers\TestController ;

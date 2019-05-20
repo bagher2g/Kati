@@ -5,7 +5,7 @@
      * just command \php katin help\ in cmd
      */
 
-     print_r($argv) ;
+    // print_r($argv) ;
 
      if( isset($argv[0]) )
      {
@@ -51,12 +51,24 @@
                       '%CLASSNAME%' ,
                   ],
                   [
-                      $name."Controller" 
+                      $name."Controller"
                   ],
                   $data) ;
 
                   file_put_contents("app/controllers/".$name."Controller.php", $data ) ;
               }; break;
+
+              /**
+               *  get a inspire sentence
+               */
+              case 'inspire':
+              {
+                  $data = file_get_contents('system/kati/inspire.txt') ;
+
+                  $sentences = explode('.', $data) ;
+                  echo $sentences[ rand(0, sizeof($sentences) - 1) ] ;
+              }
+              break;
 
           }
 
