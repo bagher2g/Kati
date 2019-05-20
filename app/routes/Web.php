@@ -20,7 +20,7 @@ class Web extends BaseRoute
               '{salam}' => '[[:digit:]]' ,
           ] ) ; */
 
-
+      
     }
 
 }
