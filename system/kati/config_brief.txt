@@ -1,0 +1,7 @@
+Welcome to the Kati!
+
+Kati has been seted %STATUS%
+Route addr: %ROUTE_ADDR%
+Database driver: %DATABASE_DRIVER%
+Database name : %DATABASE_NAME%
+Error handeling: %ERROR_HANDELING%

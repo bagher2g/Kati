@@ -6,16 +6,17 @@ namespace App\System\Http ;
 */
 class BaseQuery
 {
-    protected $elements = [] ;
-    protected $first_element = '' ;
-    protected $second_element = '' ;
-    protected $third_element = '' ;
-    protected $last_element = '' ;
-    protected $is_empty = false ;
+    public $elements = [] ;
+    public $first_element = '' ;
+    public $second_element = '' ;
+    public $third_element = '' ;
+    public $last_element = '' ;
+    public $is_empty = false ;
 
 
     public function __construct($uri='')
     {
+      //  $uri = str_replace('/' . c('routing.home') . c('routing.router'), '', $uri) ;
         $uri = $this->render($uri) ;
         $this->elements = $uri ;
 

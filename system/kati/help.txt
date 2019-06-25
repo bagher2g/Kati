@@ -1,0 +1,19 @@
+Kati help
+
+To use Kati in command mode you must add php in your environment variable. if you need use advantages of cmd base system you must use Katin.
+To do so you can use command mentioned bellow :
+
+-- config
+    /php katin config/ will show you a brief configs that you've setted in config.php
+
+-- createController
+    /php katin createController %ControllerName%/ will generate a controller in App/App/Controller namespace
+
+-- createModel
+    /php katin createModel %ModelName%/ will generate a model in App/App/Model namespace
+
+-- help
+    /php katin help/ You already know what this command does :)
+
+-- inspire
+    /php katin inspire/ Enjoy a poet of Hafiz during coding.

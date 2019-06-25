@@ -20,7 +20,7 @@ $uri = urldecode(
     * Below code will convert it to :
     * URL : /user/login
 */
-$uri = str_replace('/' . c('routing.home') . c('routing.router'), '', $uri) ;
+$uri = str_replace('/' . c('routing.home') . '/' . c('routing.router'), '', $uri) ;
 /*
     * Pass the request to final parse the url and convert it to BaseQuery object
     * BaseQuery object can retrive as object and make it more human readable
@@ -29,7 +29,8 @@ $uri = str_replace('/' . c('routing.home') . c('routing.router'), '', $uri) ;
 */
 try
 {
-    $request = new BaseRequest( new BaseQuery($uri)  ) ;
+    $_QUERY = new BaseQuery($uri) ;
+    $request = new BaseRequest( $_QUERY  ) ;
     echo $request->run() ;
     $request->set_finish_time() ;
 }

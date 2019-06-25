@@ -1,4 +1,5 @@
 <?php
+require_once('config.php') ;
     /**
      *  Katin means asistant in Mazandarani
      * This file would be your help during coding !
@@ -15,7 +16,8 @@
           {
               case 'help' :
               {
-                    echo 'this is some help you need!' ;
+                    $data = file_get_contents('system/kati/help.txt') ;
+                    echo $data ;
               }; break;
 
               /**
@@ -67,6 +69,40 @@
 
                   $sentences = explode('.', $data) ;
                   echo $sentences[ rand(0, sizeof($sentences) - 1) ] ;
+              }
+              break;
+
+
+              /**
+               *  get a config brief
+               */
+              case 'config':
+              {
+                  $type = isset($argv[2]) ? $argv[2] : 'brief' ;
+
+                  if( $type == 'brief' )
+                  {
+                      $data = file_get_contents('system/kati/config_brief.txt') ;
+                      $data = str_replace([
+                          '%STATUS%' ,
+                          '%ROUTE_ADDR%' ,
+                          '%DATABASE_DRIVER%' ,
+                          '%DATABASE_NAME%' ,
+                          '%ERROR_HANDELING%'
+                      ],
+                      [
+                          'correctly' ,
+                          '/' . c('routing.home') . '/' . c('routing.router') ,
+                          c('database.'.DATABASE_DRIVER.'.driver') ,
+                          c('database.'.DATABASE_DRIVER.'.dbname') ,
+                          c('error_handeling.app_mode') ,
+
+                      ],
+                      $data) ;
+
+                      echo $data ;
+                  }
+
               }
               break;
 

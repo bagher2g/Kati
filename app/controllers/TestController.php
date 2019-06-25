@@ -10,10 +10,11 @@ class TestController
     public function welcome_world()
     {
       global $orm ;
+      global $_QUERY ;
       try {
         $product = new Author();
-        $product->setName('bagher');
-        $product->setWeb('http://bagher2g.ir') ;
+        $product->setName( $_QUERY->telement() );
+        $product->setWeb( $_QUERY->lelement() ) ;
 
         $orm->persist($product);
         $orm->flush();
@@ -23,12 +24,7 @@ class TestController
           echo 'Code : ' . $e->getPortableCode();
           echo 'Message : ' . $e->getPortableMessage();
       }
-
-echo "Created Product with ID " . $product->getId() . "\n";
-
-        return 'salaaaaaaam!' ;
-
-
+      return "نویسنده با موفقیت ایجاد شد  " . $product->getId() . "\n";
     }
 
     public function salam_donya()
@@ -44,7 +40,7 @@ echo "Created Product with ID " . $product->getId() . "\n";
     {
         $slimDb = new Slimdb('project', '../app/slimdb') ;
         global $orm ;
-        $slimDb->insert('f.txt', $orm) ;
+        $slimDb->insert('slimdb.txt', $orm) ;
         return 'test';
     }
 }

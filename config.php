@@ -1,8 +1,11 @@
 <?php
     define('DATABASE_DRIVER', 'pdo_mysql') ;
-    define('HELPER_DIR', 'system\helpers') ;
+    define('HELPERS_DIR', '../system/helpers') ;
+    define('VIEWS_DIR', '../app/views/') ;
     define('DATABASE_DIR', 'system\database') ;
     define('ROUTES_DIR', 'App\App\Routes') ;
+
+    define('BASEPATH', '') ;
 
     /**
      *  All configs you need can be set here
@@ -20,7 +23,7 @@
          */
          'routing' => [
              'home' => 'Kati',
-             'router' => '/index.php',
+             'router' => 'public/index.php',
 
              /*
                  Feel free to comment or uncomment whatever route config you want
@@ -50,7 +53,7 @@
          *
          */
          'auto_loader' => [
-            HELPER_DIR . '\view_helper.php' ,
+            HELPERS_DIR . '\view_helper.php' ,
             DATABASE_DIR . '\Doctrine.php' ,
          ],
     ] ;

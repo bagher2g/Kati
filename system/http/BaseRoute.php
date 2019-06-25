@@ -18,6 +18,12 @@ class BaseRoute {
     {
         BaseRoute::$routing_prefix = $prefix ;
     }
+
+    protected function clear_prefix()
+    {
+        BaseRoute::$routing_prefix = '' ;
+    }
+
     protected function get($index, $function, $params=[])
     {
         BaseRoute::set($index, $function, BaseRoute::$routing_prefix, 'get', $params) ;
